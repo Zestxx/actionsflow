@@ -14,7 +14,7 @@ jobs:
           description: ${{on.rss.outputs.description}}
           link: ${{on.rss.outputs.link}}
         with:
-          to: ${{ "Roman & notificator_bot_test" }}
+          to: ${{ "151737013" }}
           token: ${{ "5145383342:AAGnaIDTEjjnW77KBMz216dnLoCv4kafRxE" }}
           message: |
             
