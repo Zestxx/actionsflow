@@ -1,0 +1,25 @@
+on:
+  rss:
+    url: https://lenta.ru/rss/top7
+
+jobs:
+  build:
+    name: Send to bot
+    runs-on: ubuntu-latest
+    steps:
+      - name: send telegram message on push
+        uses: appleboy/telegram-action@master
+        env:
+          title: ${{on.rss.outputs.title}}
+          description: ${{on.rss.outputs.description}}
+          link: ${{on.rss.outputs.link}}
+        with:
+          to: ${{ "Roman & notificator_bot_test" }}
+          token: ${{ "5145383342:AAGnaIDTEjjnW77KBMz216dnLoCv4kafRxE" }}
+          message: |
+            
+            Title - $title
+            
+            Description - $description
+            
+            link - $link
