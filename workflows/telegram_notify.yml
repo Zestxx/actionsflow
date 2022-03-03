@@ -9,17 +9,13 @@ jobs:
     steps:
       - name: send telegram message on push
         uses: appleboy/telegram-action@master
-        env:
-          title: ${{on.rss.outputs.title}}
-          description: ${{on.rss.outputs.description}}
-          link: ${{on.rss.outputs.link}}
         with:
           to: ${{ "151737013" }}
           token: ${{ "5145383342:AAGnaIDTEjjnW77KBMz216dnLoCv4kafRxE" }}
           message: |
             
-            Title - $title
+            Title - ${{on.rss.outputs.title}}
             
-            Description - $description
+            Description - ${{on.rss.outputs.description}}
             
-            link - $link
+            link - ${{on.rss.outputs.link}}
